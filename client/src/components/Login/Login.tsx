@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
@@ -17,47 +16,31 @@ const Card = styled(Paper)(({ theme }) => ({
 export default function Login() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          spacing={3}
-        >
-          <Grid item xs={6}>
-            <Card>
-              <TextField
-                type="text"
-                name="username"
-                label="Email"
-                margin="normal"
-                fullWidth
-              />
-              <TextField
-                type="password"
-                name="username"
-                label="Password"
-                margin="normal"
-                fullWidth
-              />
-              <Button variant="contained" fullWidth sx={{ padding: ".5rem" }}>
-                Login
-              </Button>
-              <Button fullWidth sx={{ padding: ".5rem" }}>
-                Forgot Password?
-              </Button>
-              <Button
-                variant="contained"
-                sx={{ padding: ".5rem" }}
-                color="success"
-              >
-                Create new account
-              </Button>
-            </Card>
-          </Grid>
-        </Grid>
-      </Grid>
+      <Card>
+        <TextField
+          type="text"
+          name="username"
+          label="Email"
+          margin="normal"
+          fullWidth
+        />
+        <TextField
+          type="password"
+          name="username"
+          label="Password"
+          margin="normal"
+          fullWidth
+        />
+        <Button variant="contained" fullWidth sx={{ padding: ".5rem" }}>
+          Login
+        </Button>
+        <Button fullWidth sx={{ padding: ".5rem" }}>
+          Forgot Password?
+        </Button>
+        <Button variant="contained" sx={{ padding: ".5rem" }} color="success">
+          Create new account
+        </Button>
+      </Card>
     </Box>
   );
 }

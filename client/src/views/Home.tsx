@@ -11,6 +11,11 @@ export default function Home() {
       </Grid>
       <Grid item xs={10} alignItems="center">
         <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
       </Grid>
     </Grid>
   );

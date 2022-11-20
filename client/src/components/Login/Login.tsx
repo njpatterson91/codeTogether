@@ -1,32 +1,42 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
-const Card = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(4),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+import Card from "../StyledComps/Card";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
+  const changeHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (e.target.name === "email") {
+      setEmail(e.target.value);
+    }
+    if (e.target.name === "password") {
+      setPass(e.target.value);
+    }
+    console.log(e);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Card>
         <TextField
           type="text"
-          name="username"
+          name="email"
           label="Email"
           margin="normal"
+          value={email}
+          onChange={(e) => {
+            changeHandler(e);
+          }}
           fullWidth
         />
         <TextField
           type="password"
-          name="username"
+          name="password"
           label="Password"
           margin="normal"
           fullWidth
